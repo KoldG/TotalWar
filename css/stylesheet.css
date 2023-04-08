@@ -87,6 +87,7 @@ input:checked + label{
     background: skyblue;
     border: solid 1px beige;
     box-shadow: 5px 1px 134px -3px cadetblue
+    
 }
 #para-segunda{
     display: flex;
@@ -113,6 +114,10 @@ input:checked + label{
     align-items: center;
     justify-content: center;
 }
+#segunda lu{
+    display: flex;
+    flex-direction: column;
+}
 .armas{
     border: solid 1px green;
     width: 250px;
@@ -123,4 +128,18 @@ input:checked + label{
     background: lightseagreen;
     box-shadow: 10px 10px 10px 0px cadetblue;
     border-radius: 0px 0px 35px 35px;
+}
+#segunda {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+#segunda img{
+    width: 60px;
+    height: 60px;
+}
+#contenedor-armas{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
