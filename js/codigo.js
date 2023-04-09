@@ -6,6 +6,8 @@ const paraTercera = document.getElementById('para-tercera')
 const terceraPagina = document.getElementById('tercera')
 
 let contenedorCascos = document.getElementById('cascos')
+let contenedorChalecos = document.getElementById('chalecos')
+let contenedorFuego = document.getElementById('fuego')
 
 let jugador
 
@@ -35,16 +37,16 @@ let angel = new Personaje('Angel', 'assets/angel.jpg', 'angel', 'p-angel', 10)
 const demonioWiro = [
     {nombre: 'Cuernos', id: 'cabeza', foto: 'assets/demonio.avif', class: 'cobertor', class2: 'a-cascos'},
     {nombre: 'Corona', id: 'cabeza2', foto: 'assets/demonio.avif', class: 'cobertor', class2: 'a-cascos'},
-    {nombre: 'Fuego', id: 'cabeza3', foto: 'assets/demonio.avif', class: 'cobertor', class2: 'a-cascos'}
-
+    {nombre: 'Fuego', id: 'cabeza3', foto: 'assets/demonio.avif', class: 'cobertor', class2: 'a-cascos'},
+    
 ]
 
 demonio.wiro.push(...demonioWiro)
 
 const humanoWiro = [
-    {nombre: 'Casco', id: 'cabeza', foto: 'assets/humano.jpg', class: 'cobertor', class2: 'a-cascos'},
-    {nombre: 'Gorra', id: 'cabeza2', foto: 'assets/humano.jpg', class: 'cobertor', class2: 'a-cascos'},
-    {nombre: 'Sombrero', id: 'cabeza3', foto: 'assets/humano.jpg', class: 'cobertor', class2: 'a-cascos'}
+    {nombre: 'Mascara', id: 'cabeza', foto: 'assets/humano.jpg', class: 'cobertor', class2: 'a-cascos'},
+    {nombre: 'Gas', id: 'cabeza2', foto: 'assets/humano.jpg', class: 'cobertor', class2: 'a-cascos'},
+    {nombre: 'Nocturno', id: 'cabeza3', foto: 'assets/humano.jpg', class: 'cobertor', class2: 'a-cascos'}
 
 ]
 
@@ -58,6 +60,63 @@ const angelWiro = [
 ]
 
 angel.wiro.push(...angelWiro)
+
+//..............Pecho..............................................
+ 
+const demonioPechera = [
+    {nombre: 'Traje', id: 'pecho', foto: 'assets/demonio.avif', class: 'cobertor-p', class2: 'a-chalecos'},
+    {nombre: 'Musculos', id: 'pecho2', foto: 'assets/demonio.avif', class: 'cobertor-p', class2: 'a-chalecos'},
+    {nombre: 'Alas', id: 'pecho3', foto: 'assets/demonio.avif', class: 'cobertor-p', class2: 'a-chalecos'},
+    
+]
+
+demonio.pechera.push(...demonioPechera)
+
+const humanoPechera = [
+    {nombre: 'Chaleco', id: 'pecho', foto: 'assets/humano.jpg', class: 'cobertor-p', class2: 'a-chalecos'},
+    {nombre: 'Sueter', id: 'pecho2', foto: 'assets/humano.jpg', class: 'cobertor-p', class2: 'a-chalecos'},
+    {nombre: 'Armadura', id: 'pecho3', foto: 'assets/humano.jpg', class: 'cobertor-p', class2: 'a-chalecos'}
+
+]
+
+humano.pechera.push(...humanoPechera)
+
+const angelPechera = [
+    {nombre: 'Alas', id: 'pecho', foto: 'assets/angel.jpg', class: 'cobertor-p', class2: 'a-chalecos'},
+    {nombre: 'Desnudo', id: 'pecho2', foto: 'assets/angel.jpg', class: 'cobertor-p', class2: 'a-chalecos'},
+    {nombre: 'Armadura', id: 'pecho3', foto: 'assets/angel.jpg', class: 'cobertor-p', class2: 'a-chalecos'}
+
+]
+
+//................................armas.............................
+
+const demonioBicha = [
+    {nombre: 'Tridente', id: 'af', foto: 'assets/demonio.avif', class: 'cobertor-a', class2: 'a-armas'},
+    {nombre: 'Fuego', id: 'af2', foto: 'assets/demonio.avif', class: 'cobertor-a', class2: 'a-armas'},
+    {nombre: 'Latigo', id: 'af3', foto: 'assets/demonio.avif', class: 'cobertor-a', class2: 'a-armas'},
+    
+]
+
+demonio.bicha.push(...demonioBicha)
+
+const humanoBicha = [
+    {nombre: 'Katana', id: 'af', foto: 'assets/humano.jpg', class: 'cobertor-a', class2: 'a-armas'},
+    {nombre: 'Asalto', id: 'af2', foto: 'assets/humano.jpg', class: 'cobertor-a', class2: 'a-armas'},
+    {nombre: 'Espadas', id: 'af3', foto: 'assets/humano.jpg', class: 'cobertor-a', class2: 'a-armas'}
+
+]
+
+humano.bicha.push(...humanoBicha)
+
+const angelBicha = [
+    {nombre: 'Arco', id: 'af', foto: 'assets/angel.jpg', class: 'cobertor-a', class2: 'a-armas'},
+    {nombre: 'Trueno', id: 'af2', foto: 'assets/angel.jpg', class: 'cobertor-a', class2: 'a-armas'},
+    {nombre: 'Espada', id: 'af3', foto: 'assets/angel.jpg', class: 'cobertor-a', class2: 'a-armas'}
+
+]
+
+angel.bicha.push(...angelBicha)
+
 
 personajes.push(demonio,humano,angel)
 
@@ -124,6 +183,24 @@ function extraerArmamento(jugador){
         
     }
     armamento(wiros)
+    
+    for (let i = 0; i < personajes.length; i++) {
+        if (jugador === personajes[i].nombre) {
+            pecheras = personajes[i].pechera
+        }
+        
+    }
+
+    armamento2(pecheras)
+
+    for (let i = 0; i < personajes.length; i++) {
+        if (jugador === personajes[i].nombre) {
+            bichas = personajes[i].bicha
+        }
+        
+    }
+    
+    armamento3(bichas)
 }
 function armamento(wiros){
     wiros.forEach((wiro) =>{
@@ -136,11 +213,43 @@ function armamento(wiros){
                 <img src=${wiro.foto} alt="personaje">
             </label> 
 
-            
-
         </lu>
         `
         contenedorCascos.innerHTML += opcionDeWiro
+    })
+}
+
+function armamento2(pecheras){
+    pecheras.forEach((pechera) =>{
+        opcionDePechera = 
+        `
+        <lu>
+            <input type="radio" name="pecheras" id=${pechera.id}>
+            <label class=${pechera.class} for=${pechera.id}>
+                <p1 class=${pechera.class2}>${pechera.nombre}</p1>
+                <img src=${pechera.foto} alt="personaje">
+            </label> 
+
+        </lu>
+        `
+        contenedorChalecos.innerHTML += opcionDePechera
+    })
+}
+
+function armamento3(bichas) {
+    bichas.forEach((bicha) =>{
+        opcionDeBicha = 
+        `
+        <lu>
+            <input type="radio" name="bichas" id=${bicha.id}>
+            <label class=${bicha.class} for=${bicha.id}>
+                <p1 class=${bicha.class2}>${bicha.nombre}</p1>
+                <img src=${bicha.foto} alt="personaje">
+            </label> 
+
+        </lu>
+        `
+        contenedorFuego.innerHTML += opcionDeBicha
     })
 }
 
