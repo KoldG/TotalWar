@@ -5,6 +5,8 @@ const contenedorPersonajes = document.getElementById('contenedor-personajes')
 const paraTercera = document.getElementById('para-tercera')
 const terceraPagina = document.getElementById('tercera')
 
+let contenedorCascos = document.getElementById('cascos')
+
 let jugador
 
 let inputpersonaje1 
@@ -89,6 +91,8 @@ function playgame(){
    
     paraSegunda.addEventListener('click', pagina2)
 
+
+
 }
 function siguiente2(){
     paraSegunda.style.display = 'flex'
@@ -98,36 +102,46 @@ function siguiente2(){
 function pagina2(){
     primeraPagina.style.display = 'none'
     segundaPagina.style.display = 'flex'
+
+    if (inputpersonaje1.checked ) {
+        jugador = inputpersonaje1.id
+    } else if (inputpersonaje2.checked ){
+        jugador = inputpersonaje2.id 
+    } else if (inputpersonaje3.checked ){
+        jugador = inputpersonaje3.id
+    }
     
-    wiro.forEach((wiros) =>{
-        opcionDeWiro = 
-        `
-        <p>Cascos:</p>
-        <lu>
-            <input type="radio" name="cascos" id="cabeza">
-            <label class="cobertor" for="cabeza">
-                <p1 class="a-cascos">Militar</p1>
-                <img src="assets/angel.jpg" alt="personaje">
-            </label> 
-
-            <input type="radio" name="cascos" id="cabeza2">
-            <label class="cobertor" for="cabeza2">
-                <p1 class="a-cascos">Asalto</p1>
-                <img src="assets/angel.jpg" alt="personaje">
-            </label> 
-
-            <input type="radio" name="cascos" id="cabeza3">
-            <label class="cobertor-c" for="cabeza3">
-                <p1 class="a-cascos">Nocturno</p1>
-                <img src="assets/angel.jpg" alt="personaje">
-            </label> 
-
-                </lu>
-        `
-    })
-
+    
+    extraerArmamento(jugador)
 
     paraTercera.addEventListener('click', pagina3)
+}
+function extraerArmamento(jugador){
+    for (let i = 0; i < personajes.length; i++) {
+        if (jugador === personajes[i].nombre) {
+            wiros = personajes[i].wiro
+        }
+        
+    }
+    armamento(wiros)
+}
+function armamento(wiros){
+    wiros.forEach((wiro) =>{
+        opcionDeWiro = 
+        `
+        <lu>
+            <input type="radio" name="cascos" id=${wiro.id}>
+            <label class=${wiro.class} for=${wiro.id}>
+                <p1 class=${wiro.class2}>${wiro.nombre}</p1>
+                <img src=${wiro.foto} alt="personaje">
+            </label> 
+
+            
+
+        </lu>
+        `
+        contenedorCascos.innerHTML += opcionDeWiro
+    })
 }
 
 function pagina3(){
