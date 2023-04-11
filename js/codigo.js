@@ -43,6 +43,8 @@ const demonioWiro = [
 
 demonio.wiro.push(...demonioWiro)
 
+//...................Cascos............................
+
 const humanoWiro = [
     {nombre: 'Mascara', id: 'cabeza', foto: 'assets/humano.jpg', class: 'cobertor', class2: 'a-cascos'},
     {nombre: 'Gas', id: 'cabeza2', foto: 'assets/humano.jpg', class: 'cobertor', class2: 'a-cascos'},
@@ -53,7 +55,7 @@ const humanoWiro = [
 humano.wiro.push(...humanoWiro)
 
 const angelWiro = [
-    {nombre: 'Aurola', id: 'cabeza', foto: 'assets/angel.jpg', class: 'cobertor', class2: 'a-cascos'},
+    {nombre: 'Aureola', id: 'cabeza', foto: 'assets/angel.jpg', class: 'cobertor', class2: 'a-cascos'},
     {nombre: 'Corona', id: 'cabeza2', foto: 'assets/angel.jpg', class: 'cobertor', class2: 'a-cascos'},
     {nombre: 'Luz', id: 'cabeza3', foto: 'assets/angel.jpg', class: 'cobertor', class2: 'a-cascos'}
 
@@ -83,10 +85,12 @@ humano.pechera.push(...humanoPechera)
 
 const angelPechera = [
     {nombre: 'Alas', id: 'pecho', foto: 'assets/angel.jpg', class: 'cobertor-p', class2: 'a-chalecos'},
-    {nombre: 'Desnudo', id: 'pecho2', foto: 'assets/angel.jpg', class: 'cobertor-p', class2: 'a-chalecos'},
+    {nombre: 'Blanco', id: 'pecho2', foto: 'assets/angel.jpg', class: 'cobertor-p', class2: 'a-chalecos'},
     {nombre: 'Armadura', id: 'pecho3', foto: 'assets/angel.jpg', class: 'cobertor-p', class2: 'a-chalecos'}
 
 ]
+
+angel.pechera.push(...angelPechera)
 
 //................................armas.............................
 
